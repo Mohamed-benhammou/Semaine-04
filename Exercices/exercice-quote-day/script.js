@@ -11,6 +11,5 @@ const getQuotes = () => {
         response[randomNumber].text;
     });
 };
-document.getElementById('new-quote').addEventListener('click', function () {
-  getQuotes();
-});
+getQuotes();
+document.getElementById('new-quote').addEventListener('click', getQuotes);
