@@ -1,8 +1,51 @@
 * {
-  font-size: 25px;
+  font-size: 20px;
 }
 body {
-  background-color: slateblue;
+  display: flex;
+  justify-content: center;
+  background-color: darkcyan;
   width: auto;
-  color: skyblue;
+  color: black;
+}
+@keyframes move-around {
+  0% {
+    transform: translateX(0px) translateY(0px);
+  }
+  20% {
+    transform: translateX(50px) translateY(100px);
+  }
+  50% {
+    transform: translateX(200px) translateY(100px);
+  }
+  75% {
+    transform: translateX(100px) translateY(50px);
+  }
+  100% {
+    transform: translateX(0px) translateY(0px);
+  }
+}
+.container_anime {
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  width: auto;
+}
+.anime_1 {
+  border-radius: 25px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  height: 18vh;
+  width: auto;
+  background-color: tomato;
+  animation-name: move-around;
+  animation-duration: 10s;
+  animation-iteration-count: infinite;
+}
+.anime_1 p {
+  align-items: center;
+  flex-direction: column;
+  display: flex;
+  justify-content: center;
 }

@@ -1,15 +1,16 @@
 /* C'est ici qu'il faut rédiger ton code pour utiliser l'API */
 const getQuotes = () => {
+  const randomNumber = Math.floor(Math.random() * Math.floor(1643));
   fetch('https://type.fit/api/quotes')
     .then(response => {
       return response.json();
     })
     .then(response => {
-      console.log(response);
-      const randomNumber = Math.floor(Math.random() * Math.floor(1643));
-      document.getElementById('quote').textContent =
-        response[randomNumber].text;
+      let data = response[randomNumber];
+      console.log(data);
+      document.getElementById('quote').textContent = data.text;
+      document.getElementById('author').textContent = data.author;
     });
 };
 getQuotes();
-document.getElementById('new-quote').addEventListener('click', getQuotes);
+addEventListener('click', getQuotes);
